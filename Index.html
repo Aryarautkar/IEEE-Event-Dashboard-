@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IEEE MITS - Event Registration Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Event Header Section -->
+  <header class="event-header">
+    <div class="header-container">
+      <span class="badge">IEEE Student Branch MITS Gwalior</span>
+      <h1>Tech Induction & Workshop 2026</h1>
+      <p class="event-desc">
+        Explore Web Development, AI/ML, and Robotics through hands-on hackathons and mentorship sessions.
+      </p>
+      <div class="event-meta">
+        <div><strong>Date:</strong> 15 October 2026</div>
+        <div><strong>Venue:</strong> MITS Campus Auditorium</div>
+        <div><strong>Eligibility:</strong> All B.Tech Branches</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    
+    <!-- Registration Form Card -->
+    <section class="card form-card">
+      <h2>Register for Event</h2>
+      <form id="registrationForm" novalidate>
+        
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="e.g. Rahul Sharma">
+          <small class="error-msg" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. rahul@mitsgwalior.in">
+          <small class="error-msg" id="emailError"></small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="branch">Branch</label>
+            <select id="branch">
+              <option value="">Select Branch</option>
+              <option value="CST">CST</option>
+              <option value="CSE">CSE</option>
+              <option value="IT">IT</option>
+              <option value="ECE">ECE</option>
+              <option value="EE">EE</option>
+              <option value="ME">ME</option>
+            </select>
+            <small class="error-msg" id="branchError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year</label>
+            <select id="year">
+              <option value="">Select Year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+            <small class="error-msg" id="yearError"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="10-digit mobile number">
+          <small class="error-msg" id="phoneError"></small>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit Registration</button>
+      </form>
+    </section>
+
+    <!-- Participant List & Controls -->
+    <section class="card list-card">
+      <div class="list-header">
+        <h2>Registered Participants (<span id="totalCount">0</span>)</h2>
+        <div class="controls">
+          <input type="text" id="searchInput" placeholder="Search by name or email...">
+          <select id="filterBranch">
+            <option value="ALL">All Branches</option>
+            <option value="CST">CST</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="EE">EE</option>
+            <option value="ME">ME</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="participantTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Branch</th>
+              <th>Year</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody id="participantList">
+            <!-- Dynamic rows injected here -->
+          </tbody>
+        </table>
+        <p id="noResults" class="no-results hidden">Koi record nahi mila.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
